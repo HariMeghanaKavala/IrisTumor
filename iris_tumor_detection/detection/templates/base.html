@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}IRIS TUMOR DETECTOR{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'detection/css/styles.css' %}">
+</head>
+<style>
+    /* Base styling for the page */
+    body {
+        background-image: url('https://identityherald.com/wp-content/uploads/2023/02/female-eye-close-up-with-smart-contact-lens-with-digital-biometric-implants-1300x731-1-1024x576.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    /* Heading styling without blue box */
+    h1 {
+        margin-top: 20px;
+        font-size: 3em;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Navigation links */
+    nav {
+        background-color: rgba(32, 61, 111, 0.9); /* Dark blue with slight transparency */
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Main content styling */
+    .main-content {
+        padding: 30px;
+        
+    }
+
+    /* Remove footer */
+</style>
+<body>
+    <!-- Header section with title only -->
+    <h1>IRIS TUMOR DETECTOR</h1>
+
+    <!-- Navigation links -->
+    <nav>
+        <a href="{% url 'home' %}">HOME</a> |  
+        {% if user.is_authenticated %}
+            <a href="{% url 'upload_image' %}">UPLOAD IMAGE</a> |
+            <a href="{% url 'logout' %}">LOGOUT</a>
+        {% else %}
+            <a href="{% url 'register' %}">REGISTER</a> |
+            <a href="{% url 'login' %}">LOGIN</a>
+        {% endif %}
+    </nav>
+
+    <!-- Messages Section -->
+    {% if messages %}
+        <div class="messages">
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- Main content section -->
+    <main class="main-content">
+        {% block content %}<h2><center style="color: rgb(0, 0, 139);">A Better Vision is Our Responsibility</center></h2>
+        <h2><center style="color: skyblue;">Welcome to the "Iris Tumor Detector"</center></h2>
+        <ul style="font-style: italic;">
+        <li><p style="color: darkblue;">Harnessing the power of advanced machine learning, this tool is designed to analyze eye images and detect potential iris tumors with precision.</p></li>
+        <li><p style="color: darkblue;">Our goal is to empower healthcare professionals and patients with accessible, reliable technology for early diagnosis, contributing to better eye health and timely medical interventions.</p></li>
+        </ul>
+        <br><h3 style="color: green;"><u>Steps To Use</u></h3>
+        
+    <ol>
+        <li>Register and Login: Go to the Register page to create an account by providing a valid details.</li>
+        
+        <li>After logging in, navigate to the Home page.</li> 
+        <li>Click on the Upload Image button to select an eye image from your device.</li>
+        <li>Ensure the image is clear and follows the format specified (e.g., .jpg, .png, etc.).</li></li>
+        
+        <li>After uploading, click the "Detect Tumor" button.</li>
+        <li> The system will analyze the image and display whether a tumor is detected or not.</li>
+        <li>Once done, click the Log Out button to safely exit your account.</li>
+    </ol>
+    {% endblock %}
+    </main>
+</body>
+</html>

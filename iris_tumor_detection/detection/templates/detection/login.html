@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>LOGIN</h2>
+<style>
+    body{
+        margin-right: 350px;
+    }
+    
+    h2{
+        color: rgb(32, 61, 111);
+        text-align: center;
+    }
+</style>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">LOGIN</button>
+</form>
+{% endblock %}
