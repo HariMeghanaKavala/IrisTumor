@@ -33,7 +33,7 @@
 
     /* Navigation links */
     nav {
-        background-color: rgba(32, 61, 111, 0.9); /* Dark blue with slight transparency */
+        background-color: rgba(32, 61, 111, 0.8); /* Dark blue with slight transparency */
         padding: 10px;
         border-radius: 10px;
         margin-top: 10px;
@@ -53,6 +53,7 @@
     /* Main content styling */
     .main-content {
         padding: 30px;
+        background-color: rgba(255, 255, 255, 0.6); /* White with 80% transparency */
         
     }
 
@@ -86,27 +87,22 @@
     {% endif %}
 
     <!-- Main content section -->
-    <main class="main-content">
-        {% block content %}<h2><center style="color: rgb(0, 0, 139);">A Better Vision is Our Responsibility</center></h2>
-        <h2><center style="color: skyblue;">Welcome to the "Iris Tumor Detector"</center></h2>
-        <ul style="font-style: italic;">
-        <li><p style="color: darkblue;">Harnessing the power of advanced machine learning, this tool is designed to analyze eye images and detect potential iris tumors with precision.</p></li>
-        <li><p style="color: darkblue;">Our goal is to empower healthcare professionals and patients with accessible, reliable technology for early diagnosis, contributing to better eye health and timely medical interventions.</p></li>
-        </ul>
-        <br><h3 style="color: green;"><u>Steps To Use</u></h3>
-        
+<main class="main-content">
+    {% block content %}
+    <h2><center style="color: rgb(0, 0, 139);">A Better Vision is Our Responsibility</center></h2>
+    <h2><center style="color: skyblue;">Welcome to the "Iris Tumor Detector"</center></h2>
+    <ul>
+        <li><p style="color: darkblue;">"The Iris Tumor Detector" is a cutting-edge tool leveraging advanced machine learning to analyze eye images and detect potential iris tumors with exceptional accuracy.</p></li>
+        <li><p style="color: darkblue;">Our mission is to empower healthcare professionals and patients with accessible, reliable technology for early detection and diagnosis, fostering better eye health and timely medical intervention.</p></li>
+    </ul>
+    <br><h3 style="color: green;"><u>How It Works</u></h3>
     <ol>
-        <li>Register and Login: Go to the Register page to create an account by providing a valid details.</li>
-        
-        <li>After logging in, navigate to the Home page.</li> 
-        <li>Click on the Upload Image button to select an eye image from your device.</li>
-        <li>Ensure the image is clear and follows the format specified (e.g., .jpg, .png, etc.).</li></li>
-        
-        <li>After uploading, click the "Detect Tumor" button.</li>
-        <li> The system will analyze the image and display whether a tumor is detected or not.</li>
-        <li>Once done, click the Log Out button to safely exit your account.</li>
+        <li><p>Register & Login: Create an account and log in.</p></li>
+        <li><p>Upload Image: Select a clear eye image (.jpg, .png).</p></li>
+        <li><p>Detect Tumor: Click "Detect Tumor" to analyze the image.</p></li>
+        <li><p>Log Out: Safely exit your account after use.</p></li>
     </ol>
     {% endblock %}
-    </main>
+</main>
 </body>
 </html>

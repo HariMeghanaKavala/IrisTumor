@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<center>
 <h2>LOGIN</h2>
 <style>
     body{
@@ -14,6 +15,7 @@
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">LOGIN</button>
+    <button type="submit" style="background-color: rgba(32, 61, 111, 1); color: white;">LOGIN</button>
 </form>
+</center>
 {% endblock %}
